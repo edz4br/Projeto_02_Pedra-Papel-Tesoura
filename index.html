@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./js.js" defer></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,100 +11,22 @@
 </head>
 
 <body>
+    <div class="container">
 
+        <div class="pick-text">Pick a option.</div>
+
+        <div class="container-button">
+            <img class="button rock" src="./rock.png" alt="rock image">
+            <img class="button paper" src="./paper.png" alt="paper image">
+            <img class="button scissor" src="./scissor.png" alt="scissor image">
+        </div>
+
+        <div class="container-score">
+            <div class="pick-text">Player Score: <span class="pScore">0</span></div>
+            <div class="pick-text">Computer Score: <span class="cScore">0</span></div>
+        </div>
+    </div>
 </body>
-<script>
-    function computerplay() {
-        let random = Math.floor(Math.random() * 4);
-        if (random >= 3)
-            return 'rock'
-        else if (random >= 2)
-            return 'paper'
-        else
-            return 'scissors'
-    }
-    function match() {
-        let enemy = computerplay();
-        let ask = prompt('Type your option: ');
-        let convert = ask.toLowerCase();
-        //If user picks rock
-        if (convert === 'rock' && enemy === 'scissors') {
-            alert('Good!\nRock beats Scissors.')
-            return 'Won'
-        }
-        if (convert === 'rock' && enemy === 'paper') {
-            alert('Bad!\nRock loses to Paper.')
-            return 'Lose'
-        }
-        if (convert === 'rock' && enemy === 'rock') {
-            alert('Draw!')
-            return 'Draw'
-        }
-        //If user picks paper
-        if (convert === 'paper' && enemy === 'rock') {
-            alert('Good!\nPaper beats Rock.')
-            return 'Won'
-        }
-        if (convert === 'paper' && enemy === 'scissors') {
-            alert('Bad!\nPaper loses to Scissors.')
-            return 'Lose'
-        }
-        if (convert === 'paper' && enemy === 'paper') {
-            alert('Draw!')
-            return 'Draw'
-        }
-        //If user picks scissors
-        if (convert === 'scissors' && enemy === 'paper') {
-            alert('Good!\nScissors beats Paper.')
-            return 'Won'
-        }
-        if (convert === 'scissors' && enemy === 'rock') {
-            alert('Bad!\nScissors loses to Rock.')
-            return 'Lose'
-        }
-        if (convert === 'scissors' && enemy === 'scissors') {
-            alert('Draw!')
-            return 'Draw'
-        }
-    }
-    function game() {
-        let score = 0;
-        let winner = 0;
-        let loser = 0;
-        while (score < 5) {
-            let round = match();
-            if (round === 'Won') {
-                score++
-                winner++
-            }
-            if (round === 'Lose') {
-                score++
-                loser++
-            }
-        }
-        if (winner > loser) {
-            let win = confirm('You won!\nPlay again?')
-            if (win == true) {
-                game()
-                return 'Winner'
-            } else {
-                return 'Winner'
-            }
-            return 'Winner'
-        }
-        if (winner < loser) {
-            let loss = confirm('You lose!\nPlay again?')
-            if (loss == true) {
-                game()
-                return 'Loser'
-            } else {
-                return 'Loser'
-            }
-        }
-    }
-    game()
 
-
-</script>
 
 </html>
