@@ -46,6 +46,7 @@ img{
 }
 
 .button{
+    cursor: pointer;
     flex: 0 1 auto;
 }
 
@@ -74,6 +75,7 @@ img{
 }
 
 .again{
+    cursor: pointer;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
     background-color: black;
